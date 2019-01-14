@@ -1,0 +1,214 @@
+.site-header {
+  box-shadow: 0 2px 5px rgba(0,0,0,.16);
+  z-index: 99;
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(0);
+  transition: transform 0.35s cubic-bezier(0.6, 0, 0.4, 1);
+  will-change: transform;
+}
+
+.site-logo {
+  padding: 0.5rem 1rem;
+
+  img {
+    height: rem-calc(60);
+  }
+
+}
+
+.main-navigation {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  flex-wrap: wrap;
+  background: $primary-color;
+  margin: 0 auto;
+}
+
+.desktop-navs-container {
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+.top-nav {
+  align-self: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+  background: $white;
+  display: none;
+
+  @include breakpoint(medium) {
+    display: flex;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+}
+
+.desktop-main-nav {
+  z-index: 99;
+  display: none;
+  align-self: flex-end;
+
+  @include breakpoint(medium) {
+    display: block;
+  }
+
+}
+
+.desktop-menu {
+
+  .menu-item, .is-active {
+    position: relative;
+
+    a {
+      color: $white;
+      font-size: rem-calc(14);
+      font-weight: 600;
+      padding: 1rem 1.25rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+      &:after {
+        width: 100%;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      background-color: $white;
+      width: 0;
+      transition: width .25s;
+      transform: skew(-25deg);
+    }
+
+  }
+
+  .is-active {
+
+    a {
+      color :$white;
+    }
+
+    &:after {
+      width: 100%;
+    }
+
+  }
+
+}
+
+.mobile-nav {
+  z-index: 99;
+  text-align: right;
+  display: block;
+
+  .menu-toggle {
+    padding: 10px 10px;
+    margin-right: rem-calc(20);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.3,.8,.3,1);
+    background: $white;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 6px 8px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+      background-color: $primary-color;
+      cursor: pointer;
+
+      .menu-bar {
+        background-color: $white;
+      }
+
+    }
+
+    &:active {
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      background-color: $primary-color;
+    }
+
+    .menu-bar {
+      background-color: $primary-color;
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+    }
+
+    .menu-bar+.menu-bar {
+      margin-top: 4px;
+    }
+
+  }
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+
+}
+
+.menu-active {
+  background-color: $primary-color;
+}
+
+// add .menu-active class for custom onclick Javascript action!
+.mobile-menu {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0 2px 5px rgba(0,0,0,.16);
+  transition: all 0.3s linear;
+  transition: opacity 0.3s ease;
+  display: block;
+  opacity: 1;
+  z-index: 10;
+  margin-top: 0;
+  @include breakpoint(medium) {
+    display: none;
+  }
+
+  .menu {
+    padding: 10px 0;
+  }
+
+  .menu-item {
+    position: relative;
+    display: block;
+
+    a {
+      line-height: 1.5em;
+    }
+
+  }
+
+}
+
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
+}

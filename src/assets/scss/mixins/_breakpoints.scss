@@ -1,0 +1,85 @@
+
+
+/**************************
+BREAK POINTS/MEDIA QUERIES
+**************************/
+
+/* @mixin breakpoint($point) {
+  @if $point == tablet {
+    @media screen and (min-width: 300px) { @content; }
+  }
+  @else if $point == laptop {
+    @media screen and (min-width: 500px){ @content; }
+  }
+  @else if $point == desktop {
+    @media screen and (min-width: 1200px){ @content; }
+  }
+}
+ */
+$phone-large-width: 410px;
+$tablet-mini-width: 560px;
+$tablet-width: 768px;
+$notebook-width: 992px;
+$laptop-small-width: 1024px;
+$laptop-width: 1200px;
+$desktop-width: 1440px;
+$desktop-large-width: 1600px;
+
+@mixin phone-large {
+  @media only screen and (min-width: #{$phone-large-width}){
+  @content;
+  }
+}
+
+@mixin tablet-mini {
+  @media only screen and (min-width: #{$tablet-mini-width}){
+  @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: #{$tablet-width}) {
+  @content;
+  }
+}
+
+@mixin notebook {
+  // @media (min-width: #{$notebook-width}) and (max-width: #{$laptop-width - 1px})   {
+  @media only screen and (min-width: #{$notebook-width}) {
+  @content;
+  }
+}
+
+@mixin laptop-small {
+  @media only screen and (min-width: #{$laptop-small-width}) {
+  @content;
+  }
+}
+
+@mixin laptop {
+  @media only screen and (min-width: #{$laptop-width}) {
+  @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: #{$desktop-width}) {
+  @content;
+  }
+}
+
+@mixin desktop-large {
+  @media (min-width: #{$desktop-large-width}) {
+  @content;
+  }
+}
+
+
+// custom breakpoints
+
+
+@mixin phone-v-large  {
+  @media only screen and (min-width: 623px) {
+  @content;
+  }
+}

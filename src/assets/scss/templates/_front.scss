@@ -1,0 +1,566 @@
+
+.background__color--dark {
+  background-color: $dark;
+  color: $white;
+
+  .section__title {
+    color: $white;
+  }
+
+}
+
+.header-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  .contact-button {
+    align-self: center;
+
+    a {
+      color: $white;
+    }
+
+  }
+
+}
+
+.day-rate {
+  color: $fontBlue;
+  font-weight: bold;
+  font-size: 3rem;
+
+  @include breakpoint(large) {
+    font-size: 4rem;
+  }
+
+}
+
+.font-red {
+  color: $fontRed;
+}
+
+.font-blue {
+  color: $fontBlue;
+}
+
+.font-green {
+  color: $fontGreen;
+}
+
+.font-purple {
+  color: $fontPurple;
+}
+
+
+.text-xl {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+
+  @include breakpoint(medium) {
+    font-size: 3rem;
+  }
+
+  @include breakpoint(large) {
+    font-size: 4rem;
+  }
+
+}
+
+.text-l {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @include breakpoint(medium) {
+    font-size: 2.25rem;
+  }
+
+  @include breakpoint(large) {
+    font-size: 3rem;
+  }
+
+}
+
+.text-m {
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  @include breakpoint(medium) {
+    font-size: 1.85rem;
+  }
+
+  @include breakpoint(large) {
+    font-size: 2.5rem;
+  }
+
+}
+
+/* Big Triangles */
+
+#bigTriangleDark path {
+  fill: $dark;
+  stroke: $dark;
+  stroke-width: 0;
+}
+
+#bigTriangleLight path {
+  fill: $white;
+  stroke: $white;
+  stroke-width: 0;
+}
+
+.intro__section {
+  padding: 2rem 0 2rem;
+
+  @include breakpoint(large) {
+    padding: 4rem 0 5rem;
+  }
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+
+
+  @include breakpoint(large) {
+    padding: 0 6rem;
+    font-size: 2rem;
+  }
+
+}
+
+.intro__availability {
+  display: block;
+  padding: 4rem 0 0;
+}
+
+.speech-bubble {
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid $light-gray;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+
+  @include breakpoint(large) {
+    font-size: 2rem;
+    padding: 1.3rem 2rem;
+  }
+
+}
+
+.speech-bubble:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid $light-gray;
+  border-top: 10px solid $light-gray;
+  border-bottom: 10px solid transparent;
+  right: 20px;
+  bottom: -22px;
+}
+
+.speech-bubble:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid $dark;
+  border-top: 10px solid $dark;
+  border-bottom: 10px solid transparent;
+  right: 22px;
+  bottom: -17px;
+}
+
+.profile-image {
+  display: block;
+  width: 100%;
+  padding: 0 0 2rem;
+  text-align: center;
+
+  @include breakpoint(large) {
+    padding: 0 0 4rem;
+  }
+
+  img {
+    width: 200px;
+    margin-top: 20px;
+
+    @include breakpoint(large) {
+      width: 300px;
+    }
+
+  }
+
+}
+
+.client-logos {
+  text-align: center;
+
+  img {
+    height: 150px;
+
+    @include breakpoint(medium) {
+      height: 200px;
+    }
+
+  }
+
+  @include breakpoint(large) {
+    margin: 4rem 0;
+    padding: 0 4rem;
+
+    img {
+      height: 250px;
+    }
+
+  }
+
+
+
+}
+
+.client-logos__title {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+
+  @include breakpoint(medium) {
+    font-size: 2.25rem;
+  }
+
+  @include breakpoint(large) {
+    margin-top: 4rem;
+    font-size: 2.9rem;
+  }
+
+}
+
+.portfolio-grid {
+  margin: 1rem 0 4rem;
+
+  @include breakpoint(large) {
+    margin: 4rem 0 8rem;
+  }
+
+}
+
+.portfolio__item {
+  position: relative;
+  transform: perspective(1px) translateZ(0);
+  color: $dark;
+
+  h2 {
+    font-size: 1rem;
+    font-weight: bold;
+
+    @include breakpoint(large) {
+      font-size: 2rem;
+      padding-top: 1rem;
+    }
+
+  }
+
+  img {
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+
+  &:hover, &:focus {
+
+    img {
+      transform: scale(0);
+    }
+
+  }
+
+}
+
+.portfolio-grid__item--info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+  align-items: center;
+
+  @include breakpoint(medium) {
+    padding: 2rem;
+  }
+
+  @include breakpoint(large) {
+    padding: 3rem;
+  }
+
+}
+
+.portfolio_grid__button {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid $fontBlue;
+  transition: all .15s ease-in-out;
+  color: $fontBlue;
+  width: auto;
+
+  @include breakpoint(large) {
+    width: 200px;
+    padding: 0.75rem;
+  }
+
+  &:hover {
+    background-image: linear-gradient(-90deg, $fontBlue, #7ab9f9);
+    color: $white;
+  }
+
+}
+
+.portfolio_grid__summary {
+  display: none;
+
+  @include breakpoint(medium) {
+    display: block;
+  }
+
+}
+
+.section__title {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  color: $dark;
+
+  @include breakpoint(large) {
+    font-size: 2.9rem;
+    padding: 0 6rem;
+  }
+
+}
+
+.tech-logos {
+  margin: 0;
+  text-align: center;
+
+  @include breakpoint(large) {
+    margin: 2rem 0 4rem;
+  }
+
+  .section__title {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+
+    @include breakpoint(medium) {
+      font-size: 2.25rem;
+    }
+
+    @include breakpoint(large) {
+      font-size: 2.9rem;
+    }
+
+  }
+
+}
+
+.separator__title {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  @include breakpoint(medium) {
+    font-size: 2.25rem;
+  }
+
+  @include breakpoint(large) {
+    padding: 2rem 6rem 4rem 6rem;
+    font-size: 2.9rem;
+  }
+
+}
+
+.separator__mobile--padding {
+  padding: 0;
+
+  @include breakpoint(medium) {
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+  }
+
+  @include breakpoint(large) {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+  }
+
+}
+
+.hire-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem 0 4rem 0;
+
+  @include breakpoint(large) {
+    padding: 4rem 0 8rem 0;
+  }
+
+  .section__title {
+    font-size: 1.5rem;
+
+    @include breakpoint(medium) {
+      font-size: 2.25rem;
+    }
+
+    @include breakpoint(large) {
+      font-size: 2.9rem;
+    }
+
+  }
+
+}
+
+.rate__container {
+  padding: 4rem 0;
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    @include breakpoint(large) {
+      font-size: 1.5rem;
+    }
+
+  }
+
+}
+
+.availability__list {
+
+  ul {
+    list-style: none;
+    margin-left: 0;
+    font-size: 1.1rem;
+
+    @include breakpoint(large) {
+      font-size: 1.2rem;
+    }
+
+  }
+
+}
+
+.availability__container {
+  padding: 0 0 2rem;
+
+  @include breakpoint(large) {
+    padding: 0 0 4rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    @include breakpoint(large) {
+      font-size: 1.5rem;
+    }
+
+  }
+
+}
+
+.contact-button {
+  color: $white;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid $fontBlue;
+  transition: all .15s ease-in-out;
+  font-size: 1.2rem;
+  padding: 0.8rem 1.2rem;
+  transition: all .15s ease-in-out;
+
+  @include breakpoint(large) {
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    color: $white;
+    background-image: linear-gradient(-90deg, $fontBlue, #7ab9f9);
+  }
+
+}
+
+.contact-link {
+  align-self: center;
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+.wpforms-container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.wpforms-label-hide {
+  display: none;
+}
+
+.wpforms-field-hp {
+  visibility: hidden;
+  height:0;
+}
+
+.contact-input {
+  margin-bottom: 2rem;
+
+  input, textarea {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px $light-gray solid;
+    box-shadow: none;
+    color: $white;
+  }
+
+  textarea {
+    height: 200px;
+  }
+
+  input:focus, textarea:focus {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px $fontBlue solid;
+    box-shadow: none;
+    color: $white;
+  }
+
+}
+
+.wpforms-error {
+  color: $fontRed;
+}
+
+.wpforms-field-textarea {
+  min-height: 200px;
+  margin-bottom: 3.3rem;
+}
+
+.wpforms-confirmation-container {
+  font-size: 1.4rem;
+  color: $fontGreen;
+}
